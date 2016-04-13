@@ -1,6 +1,7 @@
 package com.akamai.testing.aghlab.rest;
 
 
+import com.akamai.testing.aghlab.Configuration;
 import com.jayway.restassured.http.ContentType;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class PositiveShopBackendTest {
         //@formatter:off
         given().
                 log().all().
-                baseUri("http://localhost:8090").
+                baseUri(Configuration.SHOP_HOST).
                 contentType(ContentType.URLENC).
                 formParam("target_account_iban", "9484984948948498").
                 formParam("product_id", "600").

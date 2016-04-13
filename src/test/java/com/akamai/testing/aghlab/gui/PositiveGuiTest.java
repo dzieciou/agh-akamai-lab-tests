@@ -1,6 +1,7 @@
 package com.akamai.testing.aghlab.gui;
 
 
+import com.akamai.testing.aghlab.Configuration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class PositiveGuiTest {
     public void forValidCardInfoTransactionShouldBeAccepted() {
 
         // given
-        driver.get("http://localhost:8070/shop/summary");
+        driver.get(Configuration.SHOP_HOST + "/shop/summary");
 
         Select products = new Select(driver.findElement(By.name("product_id")));
         products.selectByVisibleText("Canon EOS 5000D");

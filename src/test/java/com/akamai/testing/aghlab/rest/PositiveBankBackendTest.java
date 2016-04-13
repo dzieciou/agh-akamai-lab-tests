@@ -7,6 +7,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 
+import com.akamai.testing.aghlab.Configuration;
 import org.junit.Test;
 
 
@@ -25,7 +26,7 @@ public class PositiveBankBackendTest {
         //@formatter:off
         given().
                 log().all().
-                baseUri("http://localhost:8090").
+                baseUri(Configuration.BANK_HOST).
                 formParam("target_account_iban", "1234").
                 formParam("amount", "600").
                 formParam("cc_number", CARD_NUMBER).
@@ -50,7 +51,7 @@ public class PositiveBankBackendTest {
         //@formatter:off
         given().
                 log().all().
-                baseUri("http://localhost:8090").
+                baseUri(Configuration.BANK_HOST).
                 pathParam("cardNumber", cardNumber).
         when().
                 get("/bank/cards/{cardNumber}/balance").
@@ -65,7 +66,7 @@ public class PositiveBankBackendTest {
                 //@formatter:off
         given().
                 log().all().
-                baseUri("http://localhost:8090").
+                baseUri(Configuration.BANK_HOST).
                 pathParam("accountNumber", accountNumber).
         when().
                 get("/bank/accounts/{accountNumber}/balance").

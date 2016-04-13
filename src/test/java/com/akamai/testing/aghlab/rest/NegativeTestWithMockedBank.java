@@ -1,6 +1,7 @@
 package com.akamai.testing.aghlab.rest;
 
 
+import com.akamai.testing.aghlab.Configuration;
 import com.jayway.restassured.http.ContentType;
 import org.junit.After;
 import org.junit.Before;
@@ -34,7 +35,7 @@ public class NegativeTestWithMockedBank {
         //@formatter:off
         given().
                 log().all().
-                baseUri("http://localhost:8070").
+                baseUri(Configuration.SHOP_HOST).
                 contentType(ContentType.URLENC).
                 formParam("target_account_iban", "9484984948948498").
                 formParam("product_id", "600").
