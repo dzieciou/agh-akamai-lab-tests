@@ -34,7 +34,7 @@ public class NegativeTestWithMockedBank {
         //@formatter:off
         given().
                 log().all().
-                baseUri("http://localhost:8080").
+                baseUri("http://localhost:8070").
                 contentType(ContentType.URLENC).
                 formParam("target_account_iban", "9484984948948498").
                 formParam("product_id", "600").
