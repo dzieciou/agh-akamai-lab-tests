@@ -21,7 +21,7 @@ public class PositiveBankBackendTest {
 
 
         int initialCardBalance = getCardBalance(CARD_NUMBER);
-        int initialshopAccountBalance = getAccountBalance(SHOP_ACCOUNT_NUMBER);
+        int initialShopAccountBalance = getAccountBalance(SHOP_ACCOUNT_NUMBER);
 
         //@formatter:off
         given().
@@ -43,7 +43,7 @@ public class PositiveBankBackendTest {
         int shopAccountBalance = getAccountBalance(SHOP_ACCOUNT_NUMBER);
 
         assertThat(cardBalance, lessThan(initialCardBalance));
-        assertThat(shopAccountBalance, greaterThan(initialshopAccountBalance));
+        assertThat(shopAccountBalance, greaterThan(initialShopAccountBalance));
     }
 
     private int getCardBalance(String cardNumber) {

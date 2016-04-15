@@ -27,7 +27,7 @@ public class NegativeTestWithMockedBank {
                         withMethod("POST").
                         withPath("/bank/pay")).
                 respond(response().
-                        withStatusCode(200));
+                        withStatusCode(401));
     }
 
     @Test
