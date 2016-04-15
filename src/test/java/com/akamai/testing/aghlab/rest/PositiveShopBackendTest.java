@@ -19,7 +19,7 @@ public class PositiveShopBackendTest {
                 log().all().
                 baseUri(Configuration.SHOP_HOST).
                 contentType(ContentType.URLENC).
-                formParam("target_account_iban", "9484984948948498").
+                formParam("target_account_iban", "1234").
                 formParam("product_id", "600").
                 formParam("cc_number", "4012888888881881").
                 formParam("cc_owner", "MACIEK").
@@ -33,6 +33,5 @@ public class PositiveShopBackendTest {
         //@formatter:on
 
     }
-
 
 }
