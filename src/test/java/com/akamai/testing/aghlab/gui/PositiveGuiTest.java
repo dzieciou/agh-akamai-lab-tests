@@ -3,6 +3,7 @@ package com.akamai.testing.aghlab.gui;
 
 import com.akamai.testing.aghlab.Configuration;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -43,12 +44,13 @@ public class PositiveGuiTest {
         cc_owner.submit();
 
         // then
-        driver.getPageSource().contains("Transaction accepted");
+        Assert.assertTrue(driver.getPageSource().contains("Transaction accepted"));
     }
 
     @After
     public void tearDown() {
-        driver.close();
+
+        // driver.close();
     }
 
 }
